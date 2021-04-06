@@ -1,0 +1,72 @@
+<div class="container-fluid bg-transparent">
+
+  <div class="iced-title text-center">
+    An Simple Example
+    <a href='https://github.com/Icedburn/iced-chat' style='color: gold'>
+      <fa-icon [icon]="['fab','github']" size='md' title='This Project on GitHub'></fa-icon>
+    </a>
+  </div>
+
+  <div class='row justify-content-center'>
+
+    <div class='iced-text text-justify'>
+      <p>So... everyone always talks about Parallel Programming and their many benefits, especially on performance. But how
+      are our minds ready to deal with parallel programming? Hmm... let's see a simple example?</p>
+      <p> Below you will see a tiny text box. You can enter whatever you want (well, actually I restricted it to 20
+        characters). The idea of this experiment is simple. The program will get character by character and rewrite whatever you
+        wrote in the box. Each character will be processed in parallel. Can you imagine what will happen? Will the same text
+        appears below? Please, have a try, enter the text and press the OK button =]</p>
+      <br>
+      <div class='container iced-parallel-example'>
+        <div class="row align-items-center">
+          <div class="col-3">Input Text:</div>
+          <div class="col-4">
+            <input type="text" class='w-100' [(ngModel)]='exampleInput' maxlength='20'/>
+          </div>
+          <div class="col-4 align-items-start">
+            <button class='btn btn-primary iced-button-example'
+                    (click)='runExample()'>Run!</button>
+          </div>
+        </div>
+
+        <div class="row" *ngIf='exampleResult != "" && errorMsg ==""'>
+          <div class="col-3">
+            <h4>Result: </h4>
+          </div>
+          <div class="col-4 iced-parallel-example-result">
+            <h4>{{exampleResult}}</h4>
+          </div>
+        </div>
+
+        <div class="row" *ngIf='errorMsg != ""'>
+          <div class="col-3">
+            <h4>Result: </h4>
+          </div>
+          <div class="col-9 iced-parallel-example-result">
+            <h4>
+              Whops, that's a little embarrassing, but I guess my backend is down at the moment... Do you mind send me an
+              <a href="mailto:wrkdiniz@gmail.com">e-mail</a>, please? Really sorry about that =(
+            </h4>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <p><i>Wait, what?! It seems like the same characters... but completely scrambled... What happened?!</i></p>
+      <br>
+      <p>Well... you see... Every single character was processed in parallel. But think about it. You may have, for many
+        reasons, a processor core, or a thread faster than other. You can't guarantee that all threads will take the same
+        amount of time to complete their task. In the end, the first character of the result not necessary will be the first
+        character of the input. Instead, it will be the first character that the parallel process finishes first. The order of the
+        characters in the result will actually be the order of the fastest thread to the slowest one. If the thread of the
+        first character is the slowest one, the first character will appear as the las one in the result.</p>
+      <p>That's what we call as an async program flow, where we can't control the order of the events since they don't wait
+        wait for each other (well, unless we ask them to...). And that's an simple example of how careful we need to be when
+        dealing with async programming.</p>
+      <p>This example was built in <span class='iced-language-word'>Go</span> using Go Routines to do the parallel process and
+        Go Channels to aggregate the result. Also the time for each thread was artificially implemented as a random thread sleep
+        to guarantee different process times as in real life (The backend server won't have lot of things running, which is not
+        a real scenario).</p>
+    </div>
+  </div>
+</div>

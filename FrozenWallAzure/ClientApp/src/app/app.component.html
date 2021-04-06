@@ -1,0 +1,83 @@
+<div class='iced-main-organizer'>
+  <!--
+  ------------- Navbar
+  -->
+  <nav class='navbar iced-navbar navbar-expand-lg position-static'>
+    <div class='container'>
+
+      <a class='navbar-brand' routerLinkActive='active' [routerLink]="['/home']">{{pageTitle}}</a>
+      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target="#frozenNavbar"
+              aria-controls='frozenNavbar' aria-expanded='false' aria-label='Toogle Navigation'>
+        <fa-icon [icon]="['fas','bars']" size='1x' title='Menu'></fa-icon>
+        <!--      <span class='navbar-toggler-icon'></span>-->
+      </button>
+
+      <div class='navbar-collapse collapse justify-content-end' id='frozenNavbar'>
+
+        <ul class='navbar-nav normal-links'>
+          <li class='nav-item'>
+            <a class='nav-link' routerLinkActive='active' [routerLink]="['/home']">Welcome</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' routerLinkActive='active' [routerLink]="['/resume']">Resume</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' routerLinkActive='active' [routerLink]="['/projects']">Projects</a>
+          </li>
+
+        </ul>
+        <ul class='navbar-nav social-links list-group-horizontal'>
+
+          <li class='nav-item list-group-item'>
+            <a class='nav-link' href='https://www.linkedin.com/in/william-diniz-21697216/'>
+              <fa-icon [icon]="['fab','linkedin']" size='lg' title='My LinkedIn'></fa-icon>
+            </a>
+          </li>
+          <li class='nav-item list-group-item'>
+            <a class='nav-link' href='https://github.com/Icedburn/'>
+              <fa-icon [icon]="['fab','github']" size='lg' title='My GitHub'></fa-icon>
+            </a>
+          </li>
+          <li class='nav-item list-group-item'>
+            <a class='nav-link' href='https://www.instagram.com/william.rk.diniz/'>
+              <fa-icon [icon]="['fab','instagram']" size='lg' title='My Instagram'></fa-icon>
+            </a>
+          </li>
+          <li class='nav-item list-group-item'>
+            <a class='nav-link' href='mailto:wrkdiniz@gmail.com'>
+              <fa-icon [icon]="['fas','envelope']" size='lg' title='My Email'></fa-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </nav>
+
+  <!--
+  ------------- Main Content
+  -->
+
+  <div class='iced-main-container container'>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!--
+  ------------- Footer
+  -->
+
+  <div class='iced-footer'>
+    <div class='row align-items-center'>
+      <div class='col-12'>
+        Copyright &copy; 2020 Developed by Icedburn
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

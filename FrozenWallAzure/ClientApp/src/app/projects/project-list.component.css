@@ -1,0 +1,15 @@
+.iced-projects-table {
+  width: 100%
+}
+
+.iced-projects-table thead {
+  background-color: black;
+}
+
+.iced-filter {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+.iced-filter h4 {
+  font-style: italic ;
+}

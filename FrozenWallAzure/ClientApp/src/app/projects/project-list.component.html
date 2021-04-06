@@ -1,0 +1,69 @@
+<div class='container-fluid bg-transparent'>
+
+  <div class="iced-title text-center">
+    My Projects =]
+  </div>
+
+  <div class='row justify-content-center'>
+
+    <div class='container iced-text'>
+      <div class='row text-justify'>
+        <p>In this page you will find a list of my projects. Well... Actually this page itself is the first project listed,
+        so it is a good example on how it works. On every line you will find a GitHub link for the project and a link to see
+        how it works. In each project page you will find a small explanation of the project, like the paragraph below and a way
+        to see the project working.</p>
+        <p>Although it's a simple page, I decided to build it on <span class='iced-language-word'>Angular</span> to study/play
+          with it. Also it 100% hosted on <span class='iced-language-word'>AWS</span>. Yes, a completely overkill, but hey!
+          You can find a nice "Show Last Update" button to show or hide some data of the table. Also a filter that you can
+          filter the projects by their name or language (or both). So, if you want to see only Go language project, just
+          filter by "Go" :)</p>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class="container iced-projects-table table-responsive-lg">
+        <div class='container container iced-filter'>
+          <div class="row">
+            <div class="col-md-2">Filter by:</div>
+            <div class="col-md-2">
+              <input type="text" [(ngModel)]='listFilter' />
+            </div>
+          </div>
+
+          <div class="row" *ngIf='listFilter != ""'>
+            <div class="col-md-6">
+              <h4>Filtered by: {{listFilter}}</h4>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover table-dark w-100" *ngIf="projects && projects.length">
+          <thead>
+            <tr>
+              <th>
+                <button class="btn btn-primary btn-sm"
+                (click)='toogleId()'>
+                  {{showLastUpdated ? "Hide" : "Show"}} Last Update
+                </button>
+              </th>
+              <th>Project</th>
+              <th>Language</th>
+              <th>GitHub</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor='let project of filteredProjects'>
+            <td>{{showLastUpdated ? project.LastUpdate : ""}}</td>
+            <td>{{project.Name}}</td>
+            <td>{{project.Language}}</td>
+            <td><a href='{{project.GitHubLink}}'>GitHub</a></td>
+            <td><a [href]='project.ProjectLink'>{{project.Name}}</a></td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
