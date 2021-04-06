@@ -1,0 +1,64 @@
+.iced-navbar {
+  padding-bottom: 1.5rem;
+  background-color: #282828
+}
+
+.iced-navbar .navbar-toggler {
+  border-style: solid;
+  border-color: rgb(255,255,255);
+  color: rgb(255,255,255);
+}
+
+.iced-navbar .navbar-brand {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #33FF33;
+}
+
+.iced-navbar .normal-links {
+  padding-left: 0.1rem;
+  padding-right: 4.0rem;
+}
+.iced-navbar .normal-links .nav-item {
+  text-transform: uppercase;
+  font-weight: 666;
+  padding-right: 2rem;
+  padding-bottom: 0.2rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.iced-navbar .normal-links .nav-link {
+  text-transform: uppercase;
+  font-weight: 666;
+  color: rgba(255,255,255,0.6);
+}
+
+@media only screen and (min-width: 992px) {
+  .iced-navbar .normal-links .active {
+    color: rgb(255,255,255);
+    border-bottom-style: solid;
+    border-bottom-width: 0.2rem;
+  }
+}
+
+.iced-navbar .normal-links .active {
+  color: rgb(255,255,255);
+}
+
+.iced-navbar .normal-links .collapse .active {
+  color: rgb(0,255,0);
+  border-bottom-style: solid;
+  border-bottom-width: 0.2rem;
+}
+
+.iced-navbar .social-links .list-group-item {
+  padding-left: 0;
+  padding-right: 0.7rem;
+  border: none;
+  background: transparent;
+}
+
+.iced-navbar .social-links .list-group-item .nav-link {
+  color: gold;
+}

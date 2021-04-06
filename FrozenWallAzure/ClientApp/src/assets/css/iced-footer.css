@@ -1,0 +1,12 @@
+.iced-footer {
+  padding: 0 0 0 0;
+  height: 42px;
+  margin-top: 2rem;
+  background: #404040;
+  text-align: center;
+  color: #aaa;
+}
+
+.iced-footer .row {
+  height: inherit;
+}
