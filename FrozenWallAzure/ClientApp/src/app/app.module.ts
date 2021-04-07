@@ -7,16 +7,8 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectListComponent} from './projects/project-list.component';
-//import {ResumeComponent} from './resume/resume.component';
-//import {ParallelExampleComponent} from './projects/parallel/parallel-example.component';
-
-//import {
-//  faGithub,
-//  faInstagram,
-//  faLinkedin
-//} from '@fortawesome/free-brands-svg-icons';
-//import {FontAwesomeModule, FaIconLibrary} from '@fortawesome/angular-fontawesome';
-//import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {ResumeComponent} from './resume/resume.component';
+import {ParallelExampleComponent} from './projects/parallel/parallel-example.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -29,8 +21,8 @@ import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-
     AppComponent,
     HomeComponent,
     ProjectListComponent,
-    //ResumeComponent,
-    //ParallelExampleComponent
+    ResumeComponent,
+    ParallelExampleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,9 +31,9 @@ import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-
     FontAwesomeModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
-      //{path: 'projects', component: ProjectListComponent},
-      //{path: 'resume', component: ResumeComponent},
-      //{path: 'projects-parallel-example', component: ParallelExampleComponent},
+      {path: 'projects', component: ProjectListComponent},
+      {path: 'resume', component: ResumeComponent},
+      {path: 'projects-parallel-example', component: ParallelExampleComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
@@ -50,11 +42,6 @@ import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-
   providers: [],
   bootstrap: [AppComponent]
 })
-//export class AppModule {
-//  constructor(iconLib: FaIconLibrary) {
-//    iconLib.addIcons(faLinkedin, faGithub, faInstagram, faBars, faEnvelope);
-//  }
-//}
 
 export class AppModule {
   constructor() {
