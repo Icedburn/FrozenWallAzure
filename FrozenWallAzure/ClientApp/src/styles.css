@@ -1,16 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/css/iced-navbar.css";
+@import "assets/css/iced-footer.css";
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+body {
+  background: #282828;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-code {
-  color: #e01a76;
+p {
+  text-indent: 2rem;
 }
 
-.btn-primary {
+.iced-main-organizer {
+  display: flex;
+  min-height: 100vh;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("assets/img/bg-darkened-org.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-position: center, center;
+}
+
+.iced-main-container {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+}
+
+.iced-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.iced-text {
+  position: relative;
+  width: 40rem;
+  padding-top: 3.6rem;
+}
+
+.iced-language-word {
+  color: #33FF33;
+  font-style: italic;
 }
